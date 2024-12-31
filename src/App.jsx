@@ -1,6 +1,6 @@
 import PrivateRoutes from './components/PrivateRoutes'
 import { AuthProvider } from './utils/AuthContext'
-import Room from './pages/room'
+import Room from './pages/RoomPage'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import LoginPage from './pages/LoginPage'
 import RegisterPage from './pages/RegisterPage'
