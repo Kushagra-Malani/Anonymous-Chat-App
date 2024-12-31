@@ -14,7 +14,7 @@ function Room() {
 
     useEffect(() => {
         getMessages()
-        const unsubscribe = client.subscribe('databases.6766b7be003292b20523.collections.6766b7d8002ba975712f.documents', response => {
+        const unsubscribe = client.subscribe(`databases.${conf.appwriteDatabaseId}.collections.${conf.appwriteCollectionId}.documents`, response => {
             // Callback will be executed on changes for all documents.
             console.log("Real Time: ", response);
 
@@ -77,8 +77,6 @@ function Room() {
 
     const delMessage = async(message_id) => {
         const result = await databases.deleteDocument(
-            //'6766b7be003292b20523', // databaseId
-            //'6766b7d8002ba975712f', // collectionId
             conf.appwriteDatabaseId,
             conf.appwriteCollectionId,
             message_id // documentId
